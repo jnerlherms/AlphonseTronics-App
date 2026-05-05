@@ -48,26 +48,28 @@ class Login : AppCompatActivity() {
                 val email = etEmail.text.toString().trim()
                 val password = etPassword.text.toString().trim()
 
-                // TODO: Replace with real authentication logic
-                Toast.makeText(this, "Logging in as $email", Toast.LENGTH_SHORT).show()
-
-                // Example: navigate to MainActivity after login
-                // val intent = Intent(this, MainActivity::class.java)
-                // startActivity(intent)
-                // finish()
+                // Simple hardcoded credential check for demo purposes
+                if (email == "admin@alphonse.com" && password == "123456") {
+                    Toast.makeText(this, "Login successful! Welcome back.", Toast.LENGTH_SHORT).show()
+                    // TODO: Navigate to next screen once it is created
+                    // val intent = Intent(this, YourNextActivity::class.java)
+                    // startActivity(intent)
+                    // finish()
+                } else {
+                    Toast.makeText(this, "Invalid email or password.", Toast.LENGTH_SHORT).show()
+                }
             }
         }
 
         // Forgot password click
         tvForgotPassword.setOnClickListener {
-            // TODO: Navigate to ForgotPasswordActivity or show dialog
-            Toast.makeText(this, "Forgot password tapped", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please contact support to reset your password.", Toast.LENGTH_SHORT).show()
         }
 
         // Sign up click
         tvSignUp.setOnClickListener {
-            // TODO: Navigate to RegisterActivity
-            Toast.makeText(this, "Sign up tapped", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, Registration::class.java)
+            startActivity(intent)
         }
     }
 
