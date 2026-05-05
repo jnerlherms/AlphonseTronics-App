@@ -1,5 +1,6 @@
 package com.example.alphonsetronics
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -9,8 +10,11 @@ import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.widget.ImageButton
+import android.widget.Button
 
 class Dashboard : AppCompatActivity() {
+
+    private lateinit var btnLogout: Button
 
     private lateinit var cardCpu: CardView
     private lateinit var cardGpu: CardView
@@ -18,7 +22,7 @@ class Dashboard : AppCompatActivity() {
     private lateinit var cardMonitor: CardView
 
     private lateinit var btnMessages: ImageButton
-    private lateinit var btnLiked: ImageButton
+    private lateinit var btnSearch: ImageButton
 
     private lateinit var navHome: LinearLayout
     private lateinit var navSearch: LinearLayout
@@ -37,15 +41,17 @@ class Dashboard : AppCompatActivity() {
             insets
         }
 
+        btnLogout = findViewById(R.id.btnLogout)
+
         cardCpu = findViewById(R.id.cardCpu)
         cardGpu = findViewById(R.id.cardGpu)
         cardRam = findViewById(R.id.cardRam)
         cardMonitor = findViewById(R.id.cardMonitor)
 
         btnMessages = findViewById(R.id.btnMessages)
+        btnSearch = findViewById(R.id.btnSearch)
 
         navHome = findViewById(R.id.navHome)
-        navSearch = findViewById(R.id.navSearch)
         navCart = findViewById(R.id.navCart)
         navLiked = findViewById(R.id.navLiked)
         navSettings = findViewById(R.id.navSettings)
@@ -77,13 +83,20 @@ class Dashboard : AppCompatActivity() {
             // TODO: Navigate to Messages Screen
         }
 
-        navHome.setOnClickListener {
-            Toast.makeText(this, "You are on Home", Toast.LENGTH_SHORT).show()
-        }
-
-        navSearch.setOnClickListener {
+        btnSearch.setOnClickListener {
             Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show()
             // TODO: Navigate to Search Screen
+        }
+
+        btnLogout.setOnClickListener {
+            val intent = Intent(this, Login::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
+            finish()
+        }
+
+        navHome.setOnClickListener {
+            Toast.makeText(this, "You are on Home", Toast.LENGTH_SHORT).show()
         }
 
         navCart.setOnClickListener {
