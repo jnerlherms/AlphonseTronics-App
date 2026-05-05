@@ -33,7 +33,6 @@ class Login : AppCompatActivity() {
             insets
         }
 
-        // Bind views
         tilEmail = findViewById(R.id.tilEmail)
         tilPassword = findViewById(R.id.tilPassword)
         etEmail = findViewById(R.id.etEmail)

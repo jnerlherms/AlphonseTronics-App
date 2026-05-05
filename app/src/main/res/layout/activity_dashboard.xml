@@ -49,28 +49,7 @@
             android:layout_marginEnd="8dp"
             app:tint="#FFFFFF" />
 
-        <ImageButton
-            android:id="@+id/btnLiked"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@android:drawable/btn_star_big_on"
-            android:contentDescription="Liked Products"
-            android:layout_marginEnd="8dp"
-            app:tint="#FFFFFF" />
-
-        <ImageButton
-            android:id="@+id/btnCart"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@android:drawable/ic_menu_add"
-            android:contentDescription="My Cart"
-            app:tint="#FFFFFF" />
-
     </LinearLayout>
-
-
 
     <com.google.android.material.textfield.TextInputLayout
 
@@ -221,7 +200,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Product Card 3: RAM -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardRam"
             android:layout_width="0dp"
@@ -269,7 +247,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Product Card 4: Monitor -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardMonitor"
             android:layout_width="0dp"
@@ -319,7 +296,6 @@
 
     </androidx.gridlayout.widget.GridLayout>
 
-    <!-- Bottom Navigation -->
     <LinearLayout
         android:id="@+id/bottomNav"
         android:layout_width="0dp"
@@ -331,7 +307,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Home -->
         <LinearLayout
             android:id="@+id/navHome"
             android:layout_width="0dp"
@@ -346,7 +321,7 @@
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:src="@android:drawable/ic_menu_compass"
-                android:tint="#FFFFFF" />
+                app:tint="#FFFFFF" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -356,7 +331,6 @@
                 android:textSize="10sp" />
         </LinearLayout>
 
-        <!-- Search -->
         <LinearLayout
             android:id="@+id/navSearch"
             android:layout_width="0dp"
@@ -371,7 +345,7 @@
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:src="@android:drawable/ic_menu_search"
-                android:tint="#FFFFFF" />
+                app:tint="#FFFFFF" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -381,7 +355,6 @@
                 android:textSize="10sp" />
         </LinearLayout>
 
-        <!-- Cart -->
         <LinearLayout
             android:id="@+id/navCart"
             android:layout_width="0dp"
@@ -396,7 +369,7 @@
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:src="@android:drawable/ic_menu_add"
-                android:tint="#FFFFFF" />
+                app:tint="#FFFFFF" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -406,7 +379,6 @@
                 android:textSize="10sp" />
         </LinearLayout>
 
-        <!-- Liked -->
         <LinearLayout
             android:id="@+id/navLiked"
             android:layout_width="0dp"
@@ -421,7 +393,7 @@
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:src="@android:drawable/btn_star_big_on"
-                android:tint="#FFFFFF" />
+                app:tint="#FFFFFF" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -445,7 +417,7 @@
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:src="@android:drawable/ic_menu_manage"
-                android:tint="#FFFFFF" />
+                app:tint="#FFFFFF" />
 
             <TextView
                 android:layout_width="wrap_content"

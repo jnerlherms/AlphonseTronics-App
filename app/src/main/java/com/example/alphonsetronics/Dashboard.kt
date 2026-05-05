@@ -1,6 +1,5 @@
 package com.example.alphonsetronics
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -20,7 +19,6 @@ class Dashboard : AppCompatActivity() {
 
     private lateinit var btnMessages: ImageButton
     private lateinit var btnLiked: ImageButton
-    private lateinit var btnCart: ImageButton
 
     private lateinit var navHome: LinearLayout
     private lateinit var navSearch: LinearLayout
@@ -45,8 +43,6 @@ class Dashboard : AppCompatActivity() {
         cardMonitor = findViewById(R.id.cardMonitor)
 
         btnMessages = findViewById(R.id.btnMessages)
-        btnLiked = findViewById(R.id.btnLiked)
-        btnCart = findViewById(R.id.btnCart)
 
         navHome = findViewById(R.id.navHome)
         navSearch = findViewById(R.id.navSearch)
@@ -55,62 +51,54 @@ class Dashboard : AppCompatActivity() {
         navSettings = findViewById(R.id.navSettings)
 
 
-        // TODO: Replace the Toasts once naa na ang screens nila
         cardCpu.setOnClickListener {
-            Toast.makeText(this, "Intel Core i9-13900K selected", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "AMD Ryzen 5 7600 selected", Toast.LENGTH_SHORT).show()
+            // TODO: Navigate to Product Detail Screen 1
         }
 
         cardGpu.setOnClickListener {
-            Toast.makeText(this, "NVIDIA RTX 4080 Super selected", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Colorful GeForce RTX 5060 selected", Toast.LENGTH_SHORT).show()
+            // TODO: Navigate to Product Detail Screen 2
         }
 
         cardRam.setOnClickListener {
             Toast.makeText(this, "Corsair Vengeance 32GB DDR5 selected", Toast.LENGTH_SHORT).show()
+            // TODO: Navigate to Product Detail Screen 3
         }
 
         cardMonitor.setOnClickListener {
-            Toast.makeText(this, "LG UltraGear 27\" 4K 144Hz selected", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Acer Nitro VG240Y selected", Toast.LENGTH_SHORT).show()
+            // TODO: Navigate to Product Detail Screen 4
         }
 
-        // Top bar button clicks
+        // Top bar buttons
         btnMessages.setOnClickListener {
             Toast.makeText(this, "My Messages", Toast.LENGTH_SHORT).show()
-            // TODO: Navigate to Messages screen
+            // TODO: Navigate to Messages Screen
         }
 
-        btnLiked.setOnClickListener {
-            Toast.makeText(this, "Liked Products", Toast.LENGTH_SHORT).show()
-            // TODO: Navigate to Liked Products screen
-        }
-
-        btnCart.setOnClickListener {
-            Toast.makeText(this, "My Cart", Toast.LENGTH_SHORT).show()
-            // TODO: Navigate to Cart screen
-        }
-
-        // Bottom nav clicks
         navHome.setOnClickListener {
             Toast.makeText(this, "You are on Home", Toast.LENGTH_SHORT).show()
         }
 
         navSearch.setOnClickListener {
             Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show()
-            // TODO: Navigate to Search screen
+            // TODO: Navigate to Search Screen
         }
 
         navCart.setOnClickListener {
             Toast.makeText(this, "My Cart", Toast.LENGTH_SHORT).show()
-            // TODO: Navigate to Cart screen
+            // TODO: Navigate to My Cart Screen
         }
 
         navLiked.setOnClickListener {
             Toast.makeText(this, "Liked Products", Toast.LENGTH_SHORT).show()
-            // TODO: Navigate to Liked Products screen
+            // TODO: Navigate to Liked Products Screen
         }
 
         navSettings.setOnClickListener {
             Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
-            // TODO: Navigate to Settings screen
+            // TODO: Navigate to Settings Screen
         }
     }
 }
