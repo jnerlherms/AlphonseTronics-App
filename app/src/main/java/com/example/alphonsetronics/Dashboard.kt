@@ -39,26 +39,23 @@ class Dashboard : AppCompatActivity() {
             insets
         }
 
-        // Bind product cards
         cardCpu = findViewById(R.id.cardCpu)
         cardGpu = findViewById(R.id.cardGpu)
         cardRam = findViewById(R.id.cardRam)
         cardMonitor = findViewById(R.id.cardMonitor)
 
-        // Bind top bar buttons
         btnMessages = findViewById(R.id.btnMessages)
         btnLiked = findViewById(R.id.btnLiked)
         btnCart = findViewById(R.id.btnCart)
 
-        // Bind bottom nav
         navHome = findViewById(R.id.navHome)
         navSearch = findViewById(R.id.navSearch)
         navCart = findViewById(R.id.navCart)
         navLiked = findViewById(R.id.navLiked)
         navSettings = findViewById(R.id.navSettings)
 
-        // Product card clicks
-        // TODO: Replace Toast with Intent to product detail screen in next prompt
+
+        // TODO: Replace the Toasts once naa na ang screens nila
         cardCpu.setOnClickListener {
             Toast.makeText(this, "Intel Core i9-13900K selected", Toast.LENGTH_SHORT).show()
         }
