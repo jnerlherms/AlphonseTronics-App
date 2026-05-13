@@ -13,6 +13,18 @@
         android:theme="@style/Theme.AlphonseTronics"
         tools:targetApi="31">
         <activity
+            android:name=".ProductMonitor"
+            android:exported="false" />
+        <activity
+            android:name=".ProductRam"
+            android:exported="false" />
+        <activity
+            android:name=".ProductGpu"
+            android:exported="false" />
+        <activity
+            android:name=".ProductCpu"
+            android:exported="false" />
+        <activity
             android:name=".Dashboard"
             android:exported="false" />
         <activity

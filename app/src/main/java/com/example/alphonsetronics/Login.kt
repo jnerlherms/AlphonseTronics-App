@@ -42,7 +42,7 @@ class Login : AppCompatActivity() {
         tvSignUp = findViewById(R.id.tvSignUp)
 
         btnLogin.setOnClickListener {
-            Toast.makeText(this, "Welcome to Alphonse Tronics!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Welcome to AlphonseTronics!", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, Dashboard::class.java)
             startActivity(intent)
             finish()

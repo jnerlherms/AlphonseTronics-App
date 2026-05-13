@@ -57,35 +57,53 @@ class Dashboard : AppCompatActivity() {
         navSettings = findViewById(R.id.navSettings)
 
 
+//        cardCpu.setOnClickListener {
+//            Toast.makeText(this, "AMD Ryzen 5 7600 selected", Toast.LENGTH_SHORT).show()
+//            // TODO: Navigate to Product Detail Screen 1
+//        }
+//
+//        cardGpu.setOnClickListener {
+//            Toast.makeText(this, "Colorful GeForce RTX 5060 selected", Toast.LENGTH_SHORT).show()
+//            // TODO: Navigate to Product Detail Screen 2
+//        }
+//
+//        cardRam.setOnClickListener {
+//            Toast.makeText(this, "Corsair Vengeance 32GB DDR5 selected", Toast.LENGTH_SHORT).show()
+//            // TODO: Navigate to Product Detail Screen 3
+//        }
+//
+//        cardMonitor.setOnClickListener {
+//            Toast.makeText(this, "Acer Nitro VG240Y selected", Toast.LENGTH_SHORT).show()
+//            // TODO: Navigate to Product Detail Screen 4
+//        }
+//
+//        // Top bar buttons
+//        btnMessages.setOnClickListener {
+//            Toast.makeText(this, "My Messages", Toast.LENGTH_SHORT).show()
+//            // TODO: Navigate to Messages Screen
+//        }
+//
+//        btnSearch.setOnClickListener {
+//            Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show()
+//            // TODO: Navigate to Search Screen
+//        }
+
+
+
         cardCpu.setOnClickListener {
-            Toast.makeText(this, "AMD Ryzen 5 7600 selected", Toast.LENGTH_SHORT).show()
-            // TODO: Navigate to Product Detail Screen 1
+            startActivity(Intent(this, ProductCpu::class.java))
         }
 
         cardGpu.setOnClickListener {
-            Toast.makeText(this, "Colorful GeForce RTX 5060 selected", Toast.LENGTH_SHORT).show()
-            // TODO: Navigate to Product Detail Screen 2
+            startActivity(Intent(this, ProductGpu::class.java))
         }
 
         cardRam.setOnClickListener {
-            Toast.makeText(this, "Corsair Vengeance 32GB DDR5 selected", Toast.LENGTH_SHORT).show()
-            // TODO: Navigate to Product Detail Screen 3
+            startActivity(Intent(this, ProductRam::class.java))
         }
 
         cardMonitor.setOnClickListener {
-            Toast.makeText(this, "Acer Nitro VG240Y selected", Toast.LENGTH_SHORT).show()
-            // TODO: Navigate to Product Detail Screen 4
-        }
-
-        // Top bar buttons
-        btnMessages.setOnClickListener {
-            Toast.makeText(this, "My Messages", Toast.LENGTH_SHORT).show()
-            // TODO: Navigate to Messages Screen
-        }
-
-        btnSearch.setOnClickListener {
-            Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show()
-            // TODO: Navigate to Search Screen
+            startActivity(Intent(this, ProductMonitor::class.java))
         }
 
         btnLogout.setOnClickListener {

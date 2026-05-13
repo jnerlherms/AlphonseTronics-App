@@ -31,7 +31,7 @@
             android:id="@+id/tvAppName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Alphonse Tronics"
+            android:text="AlphonseTronics"
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="#1A1A2E"
@@ -40,7 +40,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="10dp" />
 
-        <!-- Create Account Label -->
         <TextView
             android:id="@+id/tvCreateAccount"
             android:layout_width="wrap_content"
