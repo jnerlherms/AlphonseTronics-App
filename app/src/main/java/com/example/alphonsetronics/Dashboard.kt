@@ -57,19 +57,27 @@ class Dashboard : AppCompatActivity() {
         navSettings = findViewById(R.id.navSettings)
 
         cardCpu.setOnClickListener {
-            startActivity(Intent(this, ProductCpu::class.java))
+            val intent = Intent(this, ProductDetail::class.java)
+            intent.putExtra("PRODUCT_ID", "cpu")
+            startActivity(intent)
         }
 
         cardGpu.setOnClickListener {
-            startActivity(Intent(this, ProductGpu::class.java))
+            val intent = Intent(this, ProductDetail::class.java)
+            intent.putExtra("PRODUCT_ID", "gpu")
+            startActivity(intent)
         }
 
         cardRam.setOnClickListener {
-            startActivity(Intent(this, ProductRam::class.java))
+            val intent = Intent(this, ProductDetail::class.java)
+            intent.putExtra("PRODUCT_ID", "ram")
+            startActivity(intent)
         }
 
         cardMonitor.setOnClickListener {
-            startActivity(Intent(this, ProductMonitor::class.java))
+            val intent = Intent(this, ProductDetail::class.java)
+            intent.putExtra("PRODUCT_ID", "monitor")
+            startActivity(intent)
         }
 
         btnLogout.setOnClickListener {

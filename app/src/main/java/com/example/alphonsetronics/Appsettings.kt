@@ -7,7 +7,7 @@ import android.widget.LinearLayout
 import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.a.*
+import com.example.*
 
 class Appsettings : AppCompatActivity() {
 
