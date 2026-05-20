@@ -5,13 +5,13 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-
 
 class Dashboard : AppCompatActivity() {
 
@@ -30,6 +30,8 @@ class Dashboard : AppCompatActivity() {
     private lateinit var navLiked: LinearLayout
     private lateinit var navSettings: LinearLayout
 
+    private lateinit var tvUsername: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -42,6 +44,7 @@ class Dashboard : AppCompatActivity() {
         }
 
         btnLogout = findViewById(R.id.btnLogout)
+        tvUsername = findViewById(R.id.tvUsername)
 
         cardCpu = findViewById(R.id.cardCpu)
         cardGpu = findViewById(R.id.cardGpu)
@@ -55,6 +58,14 @@ class Dashboard : AppCompatActivity() {
         navCart = findViewById(R.id.navCart)
         navLiked = findViewById(R.id.navLiked)
         navSettings = findViewById(R.id.navSettings)
+
+        // Display logged in user's last name, first name
+        val user = UserManager.getLoggedInUser()
+        if (user != null) {
+            tvUsername.text = "${user.lastName}, ${user.firstName}"
+        } else {
+            tvUsername.text = "Guest"
+        }
 
         cardCpu.setOnClickListener {
             val intent = Intent(this, ProductDetail::class.java)
@@ -81,6 +92,7 @@ class Dashboard : AppCompatActivity() {
         }
 
         btnLogout.setOnClickListener {
+            UserManager.logout()
             val intent = Intent(this, Login::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent)
@@ -92,21 +104,28 @@ class Dashboard : AppCompatActivity() {
         }
 
         navCart.setOnClickListener {
-            Toast.makeText(this, "My Cart", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, Cart::class.java)
             startActivity(intent)
         }
 
         navLiked.setOnClickListener {
-            Toast.makeText(this, "Liked Products", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, Liked::class.java)
             startActivity(intent)
         }
 
         navSettings.setOnClickListener {
-            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, Appsettings::class.java)
             startActivity(intent)
+        }
+
+        btnMessages.setOnClickListener {
+            Toast.makeText(this, "My Messages", Toast.LENGTH_SHORT).show()
+            // TODO: Navigate to Messages screen
+        }
+
+        btnSearch.setOnClickListener {
+            Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show()
+            // TODO: Navigate to Search screen
         }
     }
 }

@@ -42,10 +42,28 @@ class Login : AppCompatActivity() {
         tvSignUp = findViewById(R.id.tvSignUp)
 
         btnLogin.setOnClickListener {
-            Toast.makeText(this, "Welcome to AlphonseTronics!", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, Dashboard::class.java)
-            startActivity(intent)
-            finish()
+            if (validateInputs()) {
+                val email = etEmail.text.toString().trim()
+                val password = etPassword.text.toString().trim()
+
+                val user = UserManager.login(email, password)
+
+                if (user != null) {
+                    UserManager.setLoggedInUser(user)
+                    Toast.makeText(
+                        this,
+                        "Welcome back, ${user.firstName}!",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    val intent = Intent(this, Dashboard::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    tilEmail.error = null
+                    tilPassword.error = null
+                    Toast.makeText(this, "Invalid email or password. Please check your credentials.", Toast.LENGTH_LONG).show()
+                }
+            }
         }
 
         tvForgotPassword.setOnClickListener {
@@ -56,5 +74,34 @@ class Login : AppCompatActivity() {
             val intent = Intent(this, Registration::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun validateInputs(): Boolean {
+        var isValid = true
+
+        val email = etEmail.text.toString().trim()
+        val password = etPassword.text.toString().trim()
+
+        if (email.isEmpty()) {
+            tilEmail.error = "Email is required"
+            isValid = false
+        } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            tilEmail.error = "Enter a valid email address"
+            isValid = false
+        } else {
+            tilEmail.error = null
+        }
+
+        if (password.isEmpty()) {
+            tilPassword.error = "Password is required"
+            isValid = false
+        } else if (password.length < 6) {
+            tilPassword.error = "Password must be at least 6 characters"
+            isValid = false
+        } else {
+            tilPassword.error = null
+        }
+
+        return isValid
     }
 }

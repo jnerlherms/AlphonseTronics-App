@@ -66,17 +66,34 @@ class Registration : AppCompatActivity() {
             if (validateInputs()) {
                 val firstName = etFirstName.text.toString().trim()
                 val lastName = etLastName.text.toString().trim()
+                val email = etEmail.text.toString().trim()
+                val phone = etPhone.text.toString().trim()
+                val password = etPassword.text.toString().trim()
 
-                Toast.makeText(
-                    this,
-                    "Account created successfully! Welcome, $firstName $lastName!",
-                    Toast.LENGTH_LONG
-                ).show()
+                val newUser = UserManager.User(
+                    firstName = firstName,
+                    lastName = lastName,
+                    email = email,
+                    phone = phone,
+                    password = password
+                )
 
-                val intent = Intent(this, Login::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-                startActivity(intent)
-                finish()
+                val success = UserManager.register(newUser)
+
+                if (success) {
+                    Toast.makeText(
+                        this,
+                        "Account created successfully! Welcome, $firstName $lastName!",
+                        Toast.LENGTH_LONG
+                    ).show()
+
+                    val intent = Intent(this, Login::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+                    startActivity(intent)
+                    finish()
+                } else {
+                    tilEmail.error = "An account with this email already exists"
+                }
             }
         }
 
