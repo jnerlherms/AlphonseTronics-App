@@ -25,6 +25,7 @@ class Search : AppCompatActivity() {
 
     private lateinit var navHome: LinearLayout
     private lateinit var navCart: LinearLayout
+    private lateinit var navBid: LinearLayout
     private lateinit var navLiked: LinearLayout
     private lateinit var navSettings: LinearLayout
 
@@ -71,6 +72,7 @@ class Search : AppCompatActivity() {
 
         navHome = findViewById(R.id.navHome)
         navCart = findViewById(R.id.navCart)
+        navBid = findViewById(R.id.navBid)
         navLiked = findViewById(R.id.navLiked)
         navSettings = findViewById(R.id.navSettings)
 
@@ -83,10 +85,9 @@ class Search : AppCompatActivity() {
         rvSearchResults.layoutManager = LinearLayoutManager(this)
         rvSearchResults.adapter = adapter
 
-        // Show empty state initially
+        // empty search
         showEmptyState()
 
-        // Search as user types
         etSearch.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
@@ -111,6 +112,10 @@ class Search : AppCompatActivity() {
 
         navCart.setOnClickListener {
             startActivity(Intent(this, Cart::class.java))
+        }
+
+        navBid.setOnClickListener {
+            startActivity(Intent(this, Bidding::class.java))
         }
 
         navLiked.setOnClickListener {

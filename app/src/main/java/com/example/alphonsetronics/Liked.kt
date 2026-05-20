@@ -13,6 +13,7 @@ class Liked : AppCompatActivity() {
 
     private lateinit var navHome: LinearLayout
     private lateinit var navCart: LinearLayout
+    private lateinit var navBid: LinearLayout
     private lateinit var navLiked: LinearLayout
     private lateinit var navSettings: LinearLayout
     private lateinit var rvLikedItems: RecyclerView
@@ -26,6 +27,7 @@ class Liked : AppCompatActivity() {
 
         navHome = findViewById(R.id.navHome)
         navCart = findViewById(R.id.navCart)
+        navBid = findViewById(R.id.navBid)
         navLiked = findViewById(R.id.navLiked)
         navSettings = findViewById(R.id.navSettings)
         rvLikedItems = findViewById(R.id.rvLikedItems)
@@ -52,6 +54,10 @@ class Liked : AppCompatActivity() {
         navCart.setOnClickListener {
             val intent = Intent(this, Cart::class.java)
             startActivity(intent)
+        }
+
+        navBid.setOnClickListener {
+            startActivity(Intent(this, Bidding::class.java))
         }
 
         navLiked.setOnClickListener {

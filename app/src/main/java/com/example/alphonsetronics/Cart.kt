@@ -16,6 +16,7 @@ class Cart : AppCompatActivity() {
 
     private lateinit var navHome: LinearLayout
     private lateinit var navCart: LinearLayout
+    private lateinit var navBid: LinearLayout
     private lateinit var navLiked: LinearLayout
     private lateinit var navSettings: LinearLayout
 
@@ -34,6 +35,7 @@ class Cart : AppCompatActivity() {
 
         navHome = findViewById(R.id.navHome)
         navCart = findViewById(R.id.navCart)
+        navBid = findViewById(R.id.navBid)
         navLiked = findViewById(R.id.navLiked)
         navSettings = findViewById(R.id.navSettings)
         rvCartItems = findViewById(R.id.rvCartItems)
@@ -79,6 +81,10 @@ class Cart : AppCompatActivity() {
 
         navCart.setOnClickListener {
             Toast.makeText(this, "You are in My Cart", Toast.LENGTH_SHORT).show()
+        }
+
+        navBid.setOnClickListener {
+            startActivity(Intent(this, Bidding::class.java))
         }
 
         navLiked.setOnClickListener {

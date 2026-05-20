@@ -13,10 +13,11 @@ class Appsettings : AppCompatActivity() {
 
     private lateinit var navHome: LinearLayout
     private lateinit var navCart: LinearLayout
+    private lateinit var navBid: LinearLayout
     private lateinit var navLiked: LinearLayout
     private lateinit var navSettings: LinearLayout
     private lateinit var switchNotifications: Switch
-    private lateinit var switchDarkMode: Switch
+  //  private lateinit var switchDarkMode: Switch                   // removed
     private lateinit var btnLogout: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,10 +26,11 @@ class Appsettings : AppCompatActivity() {
 
         navHome = findViewById(R.id.navHome)
         navCart = findViewById(R.id.navCart)
+        navBid = findViewById(R.id.navBid)
         navLiked = findViewById(R.id.navLiked)
         navSettings = findViewById(R.id.navSettings)
         switchNotifications = findViewById(R.id.switchNotifications)
-        switchDarkMode = findViewById(R.id.switchDarkMode)
+       // switchDarkMode = findViewById(R.id.switchDarkMode)        // removed
         btnLogout = findViewById(R.id.btnLogout)
 
         navHome.setOnClickListener {
@@ -41,6 +43,10 @@ class Appsettings : AppCompatActivity() {
             Toast.makeText(this, "My Cart", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, Cart::class.java)
             startActivity(intent)
+        }
+
+        navBid.setOnClickListener {
+            startActivity(Intent(this, Bidding::class.java))
         }
 
         navLiked.setOnClickListener {
@@ -60,14 +66,14 @@ class Appsettings : AppCompatActivity() {
                 Toast.makeText(this, "Notifications disabled", Toast.LENGTH_SHORT).show()
             }
         }
-
-        switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                Toast.makeText(this, "Dark Mode enabled", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Dark Mode disabled", Toast.LENGTH_SHORT).show()
-            }
-        }
+//
+//        switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
+//            if (isChecked) {
+//                Toast.makeText(this, "Dark Mode enabled", Toast.LENGTH_SHORT).show()          // removed
+//            } else {
+//                Toast.makeText(this, "Dark Mode disabled", Toast.LENGTH_SHORT).show()
+//            }
+//        }
 
         btnLogout.setOnClickListener {
             Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show()

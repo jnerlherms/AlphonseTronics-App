@@ -24,6 +24,7 @@ class Dashboard : AppCompatActivity() {
     private lateinit var btnSearch: ImageButton
     private lateinit var navHome: LinearLayout
     private lateinit var navCart: LinearLayout
+    private lateinit var navBid: LinearLayout
     private lateinit var navLiked: LinearLayout
     private lateinit var navSettings: LinearLayout
     private lateinit var tvUsername: TextView
@@ -49,6 +50,7 @@ class Dashboard : AppCompatActivity() {
         btnSearch = findViewById(R.id.btnSearch)
         navHome = findViewById(R.id.navHome)
         navCart = findViewById(R.id.navCart)
+        navBid = findViewById(R.id.navBid)
         navLiked = findViewById(R.id.navLiked)
         navSettings = findViewById(R.id.navSettings)
 
@@ -107,6 +109,10 @@ class Dashboard : AppCompatActivity() {
 
         navCart.setOnClickListener {
             startActivity(Intent(this, Cart::class.java))
+        }
+
+        navBid.setOnClickListener {
+            startActivity(Intent(this, Bidding::class.java))
         }
 
         navLiked.setOnClickListener {
