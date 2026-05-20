@@ -66,8 +66,12 @@ class Login : AppCompatActivity() {
             }
         }
 
+//        tvForgotPassword.setOnClickListener {
+//            Toast.makeText(this, "Please contact support to reset your password.", Toast.LENGTH_SHORT).show()
+//        }
         tvForgotPassword.setOnClickListener {
-            Toast.makeText(this, "Please contact support to reset your password.", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ForgotPassword::class.java)
+            startActivity(intent)
         }
 
         tvSignUp.setOnClickListener {

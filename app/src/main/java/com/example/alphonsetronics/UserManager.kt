@@ -28,6 +28,10 @@ object UserManager {
         }
     }
 
+    fun getUserByEmail(email: String): User? {
+        return users.find { it.email.equals(email.trim(), ignoreCase = true) }
+    }
+
     fun setLoggedInUser(user: User) {
         loggedInUser = user
     }
