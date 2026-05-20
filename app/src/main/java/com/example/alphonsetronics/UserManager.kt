@@ -37,4 +37,8 @@ object UserManager {
     fun logout() {
         loggedInUser = null
     }
+
+    fun updateUser(updatedUser: UserManager.User) {
+
+    }
 }

@@ -118,6 +118,8 @@
                         android:layout_height="18dp"
                         android:src="@android:drawable/ic_media_next"
                         app:tint="#AAAAAA" />
+
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

@@ -99,8 +99,7 @@ class Dashboard : AppCompatActivity() {
         }
 
         btnMessages.setOnClickListener {
-            Toast.makeText(this, "My Messages", Toast.LENGTH_SHORT).show()
-            // TODO: Navigate to Messages screen
+            startActivity(Intent(this, Chat::class.java))
         }
 
         navHome.setOnClickListener {

@@ -33,6 +33,18 @@ class Appsettings : AppCompatActivity() {
        // switchDarkMode = findViewById(R.id.switchDarkMode)        // removed
         btnLogout = findViewById(R.id.btnLogout)
 
+        val rowProfile = findViewById<androidx.cardview.widget.CardView>(R.id.rowProfile)
+        rowProfile.setOnClickListener {
+            val intent = Intent(this, Profile::class.java)
+            startActivity(intent)
+        }
+
+        val rowChangePassword = findViewById<androidx.cardview.widget.CardView>(R.id.rowChangePassword)
+        rowChangePassword.setOnClickListener {
+            val intent = Intent(this, ChangePassword::class.java)
+            startActivity(intent)
+        }
+
         navHome.setOnClickListener {
             Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, Dashboard::class.java)
