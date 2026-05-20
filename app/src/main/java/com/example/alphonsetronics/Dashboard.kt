@@ -16,20 +16,16 @@ import androidx.core.view.WindowInsetsCompat
 class Dashboard : AppCompatActivity() {
 
     private lateinit var btnLogout: Button
-
     private lateinit var cardCpu: CardView
     private lateinit var cardGpu: CardView
     private lateinit var cardRam: CardView
     private lateinit var cardMonitor: CardView
-
     private lateinit var btnMessages: ImageButton
     private lateinit var btnSearch: ImageButton
-
     private lateinit var navHome: LinearLayout
     private lateinit var navCart: LinearLayout
     private lateinit var navLiked: LinearLayout
     private lateinit var navSettings: LinearLayout
-
     private lateinit var tvUsername: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,15 +41,12 @@ class Dashboard : AppCompatActivity() {
 
         btnLogout = findViewById(R.id.btnLogout)
         tvUsername = findViewById(R.id.tvUsername)
-
         cardCpu = findViewById(R.id.cardCpu)
         cardGpu = findViewById(R.id.cardGpu)
         cardRam = findViewById(R.id.cardRam)
         cardMonitor = findViewById(R.id.cardMonitor)
-
         btnMessages = findViewById(R.id.btnMessages)
         btnSearch = findViewById(R.id.btnSearch)
-
         navHome = findViewById(R.id.navHome)
         navCart = findViewById(R.id.navCart)
         navLiked = findViewById(R.id.navLiked)
@@ -99,23 +92,8 @@ class Dashboard : AppCompatActivity() {
             finish()
         }
 
-        navHome.setOnClickListener {
-            Toast.makeText(this, "You are on Home", Toast.LENGTH_SHORT).show()
-        }
-
-        navCart.setOnClickListener {
-            val intent = Intent(this, Cart::class.java)
-            startActivity(intent)
-        }
-
-        navLiked.setOnClickListener {
-            val intent = Intent(this, Liked::class.java)
-            startActivity(intent)
-        }
-
-        navSettings.setOnClickListener {
-            val intent = Intent(this, Appsettings::class.java)
-            startActivity(intent)
+        btnSearch.setOnClickListener {
+            startActivity(Intent(this, Search::class.java))
         }
 
         btnMessages.setOnClickListener {
@@ -123,9 +101,20 @@ class Dashboard : AppCompatActivity() {
             // TODO: Navigate to Messages screen
         }
 
-        btnSearch.setOnClickListener {
-            Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show()
-            // TODO: Navigate to Search screen
+        navHome.setOnClickListener {
+            Toast.makeText(this, "You are on Home", Toast.LENGTH_SHORT).show()
+        }
+
+        navCart.setOnClickListener {
+            startActivity(Intent(this, Cart::class.java))
+        }
+
+        navLiked.setOnClickListener {
+            startActivity(Intent(this, Liked::class.java))
+        }
+
+        navSettings.setOnClickListener {
+            startActivity(Intent(this, Appsettings::class.java))
         }
     }
 }
